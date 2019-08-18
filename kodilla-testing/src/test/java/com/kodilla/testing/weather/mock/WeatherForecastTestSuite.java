@@ -1,4 +1,4 @@
-package com.kodilla.testing.forum.weather.mock;
+package com.kodilla.testing.weather.mock;
 
 import com.kodilla.testing.weather.stub.Temperatures;
 import com.kodilla.testing.weather.stub.WeatherForecast;
