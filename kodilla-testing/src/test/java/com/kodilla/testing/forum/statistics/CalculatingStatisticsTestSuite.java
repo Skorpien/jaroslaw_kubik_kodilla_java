@@ -10,13 +10,7 @@ import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
 public class CalculatingStatisticsTestSuite {
-    private List<String> userGenerator (int numbOfUsers) {
-        List<String> listOfUsers = new ArrayList<String>();
-        for (int i = 1; i<=numbOfUsers; i++){
-            listOfUsers.add("user" + i);
-        }
-        return listOfUsers;
-    }
+
     @Test
     public void testAveragePosts0Users0WithMock() {
         //Given
@@ -32,7 +26,7 @@ public class CalculatingStatisticsTestSuite {
         calculatingStatistics.calculateAdvStatistics(statisticsMock);
 
         //Then
-        Assert.assertEquals(0, calculatingStatistics.averagePostsPerUser, 0.01);
+        Assert.assertEquals(0, calculatingStatistics.getAveragePostsPerUser(), 0.01);
     }
     @Test
     public void testAveragePosts1000Users0WithMock() {
@@ -48,7 +42,7 @@ public class CalculatingStatisticsTestSuite {
         calculatingStatistics.calculateAdvStatistics(statisticsMock);
 
         //Then
-        Assert.assertEquals(0, calculatingStatistics.averagePostsPerUser, 0.01);
+        Assert.assertEquals(0, calculatingStatistics.getAveragePostsPerUser(), 0.01);
     }
     @Test
     public void testAveragePosts0Users100WithMock() {
@@ -65,7 +59,7 @@ public class CalculatingStatisticsTestSuite {
         calculatingStatistics.calculateAdvStatistics(statisticsMock);
 
         //Then
-        Assert.assertEquals(0, calculatingStatistics.averagePostsPerUser, 0.01);
+        Assert.assertEquals(0, calculatingStatistics.getAveragePostsPerUser(), 0.01);
     }
     @Test
     public void testAveragePosts1000Users100WithMock() {
@@ -82,7 +76,7 @@ public class CalculatingStatisticsTestSuite {
         calculatingStatistics.calculateAdvStatistics(statisticsMock);
 
         //Then
-        Assert.assertEquals(10, calculatingStatistics.averagePostsPerUser, 0.01);
+        Assert.assertEquals(10, calculatingStatistics.getAveragePostsPerUser(), 0.01);
     }
     @Test
     public void testAverageComments0Users0WithMock() {
@@ -99,7 +93,7 @@ public class CalculatingStatisticsTestSuite {
         calculatingStatistics.calculateAdvStatistics(statisticsMock);
 
         //Then
-        Assert.assertEquals(0, calculatingStatistics.averageCommentsPerUser, 0.01);
+        Assert.assertEquals(0, calculatingStatistics.getAverageCommentsPerUser(), 0.01);
     }
     @Test
     public void testAverageComments0Users100WithMock() {
@@ -116,7 +110,7 @@ public class CalculatingStatisticsTestSuite {
         calculatingStatistics.calculateAdvStatistics(statisticsMock);
 
         //Then
-        Assert.assertEquals(0, calculatingStatistics.averageCommentsPerUser, 0.01);
+        Assert.assertEquals(0, calculatingStatistics.getAverageCommentsPerUser(), 0.01);
     }
     @Test
     public void testAverageCommentsMoreThanPostsWithMock() {
@@ -133,7 +127,7 @@ public class CalculatingStatisticsTestSuite {
         calculatingStatistics.calculateAdvStatistics(statisticsMock);
 
         //Then
-        Assert.assertEquals(10, calculatingStatistics.averageCommentsPerPost, 0.01);
+        Assert.assertEquals(10, calculatingStatistics.getAverageCommentsPerPost(), 0.01);
     }
     @Test
     public void testAverageCommentsLessThanPostsWithMock() {
@@ -150,7 +144,7 @@ public class CalculatingStatisticsTestSuite {
         calculatingStatistics.calculateAdvStatistics(statisticsMock);
 
         //Then
-        Assert.assertEquals(0.1, calculatingStatistics.averageCommentsPerPost, 0.01);
+        Assert.assertEquals(0.1, calculatingStatistics.getAverageCommentsPerPost(), 0.01);
     }
     @Test
     public void testShowStatisticsWithMock() {
@@ -170,5 +164,12 @@ public class CalculatingStatisticsTestSuite {
 
         //Then
         Assert.assertEquals("Average Posts per Users: 5.0\nAverage Comments per Users: 5.0\nAverage Comments per Posts: 1.0", calculatingStatistics.showStatistics());
+    }
+    private List<String> userGenerator (int numbOfUsers) {
+        List<String> listOfUsers = new ArrayList<String>();
+        for (int i = 1; i <= numbOfUsers; i++) {
+            listOfUsers.add("user" + i);
+        }
+        return listOfUsers;
     }
 }

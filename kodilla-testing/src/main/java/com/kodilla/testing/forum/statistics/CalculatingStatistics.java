@@ -2,12 +2,36 @@ package com.kodilla.testing.forum.statistics;
 
 
 public class CalculatingStatistics {
-    int usersCount;
-    int postsCount;
-    int commentsCount;
-    double averagePostsPerUser;
-    double averageCommentsPerUser;
-    double averageCommentsPerPost;
+    private int usersCount;
+    private int postsCount;
+    private int commentsCount;
+    private double averagePostsPerUser;
+    private double averageCommentsPerUser;
+    private double averageCommentsPerPost;
+
+    public int getUsersCount() {
+        return usersCount;
+    }
+
+    public int getPostsCount() {
+        return postsCount;
+    }
+
+    public int getCommentsCount() {
+        return commentsCount;
+    }
+
+    public double getAveragePostsPerUser() {
+        return averagePostsPerUser;
+    }
+
+    public double getAverageCommentsPerUser() {
+        return averageCommentsPerUser;
+    }
+
+    public double getAverageCommentsPerPost() {
+        return averageCommentsPerPost;
+    }
 
     public void calculateAdvStatistics(Statistics statistics) {
         this.usersCount = statistics.userNames().size();
@@ -17,8 +41,8 @@ public class CalculatingStatistics {
             this.averagePostsPerUser = 0;
             this.averageCommentsPerUser = 0;
         } else {
-            this.averagePostsPerUser = (double)statistics.postsCount() / (double)statistics.userNames().size();
-            this.averageCommentsPerUser = (double)statistics.commentsCount() / (double)statistics.userNames().size();
+            this.averagePostsPerUser = statistics.postsCount() / (double)statistics.userNames().size();
+            this.averageCommentsPerUser = statistics.commentsCount() / (double)statistics.userNames().size();
         }
         if (statistics.postsCount()==0) {
             this.averageCommentsPerPost = 0;

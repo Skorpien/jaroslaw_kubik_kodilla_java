@@ -32,7 +32,7 @@ public class ShapeCollectorTestSuite {
         collector.addFigure(square);
         collector.addFigure(circle);
         //Then
-        Assert.assertEquals(3, collector.figures.size());
+        Assert.assertEquals(3, collector.getFigures().size());
     }
     @Test
     public void testRemoveFigureNotExisting() {
@@ -56,7 +56,7 @@ public class ShapeCollectorTestSuite {
         boolean result = collector.removeFigure(triangle);
         //Then
         Assert.assertTrue(result);
-        Assert.assertEquals(1, collector.figures.size());
+        Assert.assertEquals(1, collector.getFigures().size());
     }
     @Test
     public void testGetFigure() {
@@ -78,8 +78,8 @@ public class ShapeCollectorTestSuite {
         collector.addFigure(triangle);
         collector.addFigure(square);
         //When
-        String figures = triangle.toString() + square.toString();
+        String result = collector.showFigures();
         //Then
-        Assert.assertEquals(figures, collector.showFigures());
+        Assert.assertEquals("Triangle 3.0\nSquare 25.0\n", result);
     }
 }
