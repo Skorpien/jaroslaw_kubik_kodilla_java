@@ -3,7 +3,7 @@ package com.kodilla.stream.forumuser;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Forum {
+public final class Forum {
     private final List<ForumUser> users = new ArrayList<ForumUser>();
 
     public Forum () {

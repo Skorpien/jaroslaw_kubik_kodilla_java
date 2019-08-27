@@ -2,12 +2,12 @@ package com.kodilla.stream.forumuser;
 
 import java.time.LocalDate;
 
-public class ForumUser {
-    private int id;
-    private String userName;
-    private char gender;
-    private LocalDate birthDate;
-    private int numbOfPosts;
+public final class ForumUser {
+    private final int id;
+    private final String userName;
+    private final char gender;
+    private final LocalDate birthDate;
+    private final int numbOfPosts;
 
     public ForumUser(int id, String userName, char gender, int yearOfBirth, int monthOfBirth, int dayOfBirth, int numbOfPosts) {
         this.id = id;
@@ -42,7 +42,6 @@ public class ForumUser {
             return true;
         }else
             return false;
-
     }
 
     @Override
