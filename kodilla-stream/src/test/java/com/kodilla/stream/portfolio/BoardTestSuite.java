@@ -150,14 +150,13 @@ public class BoardTestSuite {
         //When
         List<TaskList> inProgressTasks = new ArrayList<>();
         inProgressTasks.add(new TaskList("In progress"));
-        List<Long> list = project.getTaskLists().stream()
+        List<Integer> list = project.getTaskLists().stream()
                 .filter(inProgressTasks::contains)
                 .flatMap(tl -> tl.getTasks().stream())
-                .map(t -> Period.between(t.getCreated(), LocalDate.now()))
-                .map(t -> t.get(ChronoUnit.DAYS))
+                .map(t -> LocalDate.now().compareTo(t.getCreated()))
                 .collect(Collectors.toList());
-        double average = LongStream.range(0, list.size())
-                .map(a -> list.get((int) a))
+        double average = IntStream.range(0, list.size())
+                .map(a -> list.get(a))
                 .average().getAsDouble();
 
         //Then
