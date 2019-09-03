@@ -27,7 +27,5 @@ public class FirstChallenge {
         } finally {
             System.out.println("Divide and conquer");
         }
-
-
     }
 }
