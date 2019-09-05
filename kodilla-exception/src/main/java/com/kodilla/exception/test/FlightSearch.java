@@ -18,10 +18,10 @@ public class FlightSearch {
         airports.put("Dakar", true);
 
 
-        if (airports.get(flight.getArrivalAirport())==null || airports.get(flight.getArrivalAirport())==false) {
+        if (airports.get(flight.getArrivalAirport())==null || !airports.get(flight.getArrivalAirport())) {
             throw new RouteNotFoundException(flight.getArrivalAirport());
         }
-        if(airports.get(flight.getDepartureAirport())==null || airports.get(flight.getDepartureAirport())==false) {
+        if(airports.get(flight.getDepartureAirport())==null || !airports.get(flight.getDepartureAirport())) {
             throw new RouteNotFoundException(flight.getDepartureAirport());
         }
 
