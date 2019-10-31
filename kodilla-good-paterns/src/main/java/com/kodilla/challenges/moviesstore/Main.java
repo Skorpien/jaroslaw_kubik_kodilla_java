@@ -1,4 +1,4 @@
-package com.kodilla.challenges;
+package com.kodilla.challenges.moviesstore;
 
 import java.util.Collection;
 import java.util.HashMap;
