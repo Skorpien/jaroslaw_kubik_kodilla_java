@@ -8,7 +8,11 @@ import org.springframework.context.annotation.Scope;
 @Configuration
 public class BoardConfig {
     @Autowired
-    TaskList taskList1, taskList2, taskList3;
+    TaskList taskList1;
+    @Autowired
+    TaskList taskList2;
+    @Autowired
+    TaskList taskList3;
 
     @Bean
     public Board board() {
