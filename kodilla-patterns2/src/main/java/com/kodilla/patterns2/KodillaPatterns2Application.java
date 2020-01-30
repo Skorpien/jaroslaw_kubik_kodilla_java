@@ -4,10 +4,10 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class KodillaPaterns2Application {
+public class KodillaPatterns2Application {
 
     public static void main(String[] args) {
-        SpringApplication.run(KodillaPaterns2Application.class, args);
+        SpringApplication.run(KodillaPatterns2Application.class, args);
     }
 
 }
