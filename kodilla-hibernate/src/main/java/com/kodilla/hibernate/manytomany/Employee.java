@@ -1,16 +1,30 @@
 package com.kodilla.hibernate.manytomany;
 
 
+import org.springframework.stereotype.Service;
+
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import java.util.ArrayList;
 import java.util.List;
 
-@NamedQuery(
-        name = "Employee.retrieveEmployees",
-        query = "FROM Employee WHERE lastname = 'Bobek'"
-)
+@NamedNativeQueries({
+        @NamedNativeQuery(
+                name = "Employee.retrieveEmployees",
+                query = "SELECT * FROM EMPLOYEES" +
+                        " WHERE LASTNAME LIKE 'Bob%'",
+                resultClass = Employee.class
+        ),
 
+        @NamedNativeQuery(
+                name = "Employee.retrieveEmployeesLikeParam",
+                query = "SELECT * FROM EMPLOYEES" +
+                        " WHERE LASTNAME LIKE CONCAT('%', :param , '%')",
+                resultClass = Employee.class
+        )
+})
+
+@Service
 @Entity
 @Table(name = "EMPLOYEES")
 public class Employee {
