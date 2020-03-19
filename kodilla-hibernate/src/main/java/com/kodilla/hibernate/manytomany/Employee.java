@@ -4,7 +4,7 @@ package com.kodilla.hibernate.manytomany;
 import org.springframework.stereotype.Service;
 
 import javax.persistence.*;
-import org.jetbrains.annotations.NotNull;
+import javax.validation.constraints.NotNull;
 import java.util.ArrayList;
 import java.util.List;
 
